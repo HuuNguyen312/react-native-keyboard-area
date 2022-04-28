@@ -1,19 +1,18 @@
 {
   "name": "react-native-keyboard-area",
-  "version": "1.0.5",
+  "version": "1.0.0",
   "description": "React Native component that provides a View that always match the height of the keyboard",
   "author": "Thomas Gazzoni",
   "bugs": {
-    "url": "https://github.com/thomasgazzoni/react-native-keyboard-area/issues"
+    "url": "https://github.com/yangdong-wuye/react-native-keyboard-area/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/thomasgazzoni/react-native-keyboard-area.git"
+    "url": "https://github.com/yangdong-wuye/react-native-keyboard-area.git"
   },
-  "homepage": "https://github.com/thomasgazzoni/react-native-keyboard-area",
+  "homepage": "https://github.com/yangdong-wuye/react-native-keyboard-area",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/index.ts",
   "keywords": [
     "react-native",
     "keyboard",

@@ -28,12 +28,13 @@ export declare class RNKeyboard {
      * @param height current keyboard height
      */
     private static keyboardListener;
+    static getWindowSoftInputMode(): Promise<number | undefined | null>;
     /**
      * @android only
      * Change the WindowSoftInput behavior at runtime
      * @param mode See SoftInputMode for all the options
      */
-    static setWindowSoftInputMode(mode: SoftInputMode): any;
+    static setWindowSoftInputMode(mode: SoftInputMode | number): any;
     /**
      * Invoke the provided callback every time the keyboard height changes (when it show/hide)
      * Note: when it invoke the first time it will listen to RNKeyboard native event

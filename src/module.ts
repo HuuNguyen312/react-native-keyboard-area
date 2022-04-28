@@ -67,13 +67,17 @@ export class RNKeyboard {
     });
   }
 
+  static getWindowSoftInputMode(): Promise<number | undefined | null> {
+    return KBModule.getWindowSoftInputMode();
+  }
+
   /**
    * @android only
    * Change the WindowSoftInput behavior at runtime
    * @param mode See SoftInputMode for all the options
    */
-  static setWindowSoftInputMode(mode: SoftInputMode) {
-    return KBModule.setWindowSoftInputMode(SOFT_INPUT_MODES[mode]);
+  static setWindowSoftInputMode(mode: SoftInputMode | number) {
+    return KBModule.setWindowSoftInputMode(typeof mode === 'number' ? mode: SOFT_INPUT_MODES[mode]);
   }
 
   /**

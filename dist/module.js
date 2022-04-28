@@ -50,13 +50,16 @@ export class RNKeyboard {
             callback(keyboardHeight);
         });
     }
+    static getWindowSoftInputMode() {
+        return KBModule.getWindowSoftInputMode();
+    }
     /**
      * @android only
      * Change the WindowSoftInput behavior at runtime
      * @param mode See SoftInputMode for all the options
      */
     static setWindowSoftInputMode(mode) {
-        return KBModule.setWindowSoftInputMode(SOFT_INPUT_MODES[mode]);
+        return KBModule.setWindowSoftInputMode(typeof mode === 'number' ? mode : SOFT_INPUT_MODES[mode]);
     }
     /**
      * Invoke the provided callback every time the keyboard height changes (when it show/hide)
@@ -77,7 +80,6 @@ export class RNKeyboard {
      */
     static removeKeyboardListener(callback) {
         RNKeyboard.callbacks = RNKeyboard.callbacks.filter(cb => cb !== callback);
-        RNKeyboard.isInitialized = false;
     }
 }
 RNKeyboard.isInitialized = false;

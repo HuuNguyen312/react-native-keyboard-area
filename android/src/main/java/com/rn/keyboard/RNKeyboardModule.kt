@@ -1,6 +1,5 @@
 package com.rn.keyboard
 
-import android.util.Log
 import android.view.WindowManager.LayoutParams
 import com.facebook.react.bridge.*
 import com.facebook.react.modules.core.DeviceEventManagerModule
@@ -8,6 +7,16 @@ import com.facebook.react.modules.core.DeviceEventManagerModule
 @Suppress("unused")
 class RNKeyboardModule(private val reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
     private var keyboardProvider: KeyboardProvider? = null
+
+    @ReactMethod
+    fun getWindowSoftInputMode(promise: Promise) {
+        try {
+           var softInputMode = currentActivity?.window?.attributes?.softInputMode
+            promise.resolve(softInputMode)
+        } catch (e: Exception) {
+            promise.reject("error", e.toString())
+        }
+    }
 
     @ReactMethod
     fun setWindowSoftInputMode(mode: Int, promise: Promise) {
