@@ -12,7 +12,8 @@
   },
   "homepage": "https://github.com/yangdong-wuye/react-native-keyboard-area",
   "license": "MIT",
-  "main": "dist/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "keywords": [
     "react-native",
     "keyboard",
